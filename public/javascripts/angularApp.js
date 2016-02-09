@@ -1,5 +1,4 @@
 var app= angular.module('flapperNews', []);
-console.log('test')
 
 app.factory('posts', [function(){
     var o = {
