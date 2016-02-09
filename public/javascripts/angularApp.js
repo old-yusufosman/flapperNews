@@ -12,7 +12,6 @@ app.controller('MainCtrl', [
     '$scope',
     'posts',
     function($scope, posts){
-        $scope.test = 'Hello world!';
         $scope.posts = posts.posts;
         $scope.incrementUpvotes = function(post){
             post.upvotes += 1;
@@ -28,8 +27,5 @@ app.controller('MainCtrl', [
             });
             $scope.title = '';
             $scope.link = '';
-            $scope.$watch('posts', function() {
-                alert(posts.posts);
-            });
         }
     }]);
