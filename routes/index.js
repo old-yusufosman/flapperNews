@@ -57,7 +57,7 @@ router.param('comment', function(req, res, next, id) {
 
     query.exec(function (err, comment){
         if (err) { return next(err); }
-        if (!comment) { return next(new Error('can\'t find post')); }
+        if (!comment) { return next(new Error('can\'t find comment')); }
 
         req.comment = comment;
         return next();
