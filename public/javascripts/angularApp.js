@@ -156,8 +156,10 @@ app.factory('auth', ['$http', '$window', function ($http, $window) {
 app.controller('MainCtrl', [
     '$scope',
     'posts',
-    function ($scope, posts) {
+    'auth',
+    function ($scope, posts, auth) {
         $scope.posts = posts.posts;
+        $scope.isLoggedIn = auth.isLoggedIn;
         $scope.incrementUpvotes = function (post) {
             posts.upvote(post);
         };
@@ -179,8 +181,10 @@ app.controller('PostsCtrl', [
     '$scope',
     'posts',
     'post',
-    function ($scope, posts, post) {
+    'auth',
+    function ($scope, posts, post, auth) {
         $scope.post = post;
+        $scope.isLoggedIn = auth.isLoggedIn;
         $scope.incrementUpvotes = function (comment) {
             posts.upvoteComment(post, comment);
         };
